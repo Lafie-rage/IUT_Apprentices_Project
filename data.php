@@ -18,7 +18,7 @@ session_start();
 	{
 
 		// Utilisateurs /////////////////////////////////////////////////////////////
-
+		// http://localhost/data.php?action=register&log=monLog&pseudo=monPseudo&pass=monPassword
 		case "register" :
 			$log = valider("log");
 			if(loginExist($log) === false) {
@@ -86,6 +86,7 @@ session_start();
 			$data["feedback"] = "ok";
 		break;
 
+		// http://localhost/data.php?action=addCateg&titre=monTitre
 		case 'addCateg' :
 			$titre = valider('titre');
 			$data["nb"] = addCateg($titre);
