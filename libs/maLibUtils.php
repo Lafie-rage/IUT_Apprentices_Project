@@ -63,30 +63,6 @@ function getValue($nom,$defaut=false,$type="REQUEST") {
 	return $resultat;
 }
 
-/**
-*
-* Evite les injections SQL en protegeant les apostrophes par des '\'
-* Attention : SQL server utilise des doubles apostrophes au lieu de \'
-* ATTENTION : LA PROTECTION N'EST EFFECTIVE QUE SI ON ENCADRE TOUS LES ARGUMENTS PAR DES APOSTROPHES
-* Y COMPRIS LES ARGUMENTS ENTIERS !!
-* @param string $str
-*/
-/*function proteger($str) {
-	// attention au cas des select multiples !
-	// On pourrait passer le tableau par r�f�rence et �viter la cr�ation d'un tableau auxiliaire
-	if (is_array($str)) {
-		$nextTab = array();
-		foreach($str as $cle => $val) {
-			$nextTab[$cle] = addslashes($val);
-		}
-		return $nextTab;
-	}
-	else
-		return addslashes ($str);
-	//return str_replace("'","''",$str); 	//utile pour les serveurs de bdd Crosoft
-}*/
-
-
 
 function tprint($tab) {
 	echo "<pre>\n";
