@@ -31,7 +31,7 @@ session_start();
 				break;
 			}
 			$pass = valider("pass");
-			$pass = hash('sha256', $pass);
+			$pass = hash('sha256', $pass); // Utiliser password_hash()...
 			$color = valider("color");
 			$data["id"] = register($log, $pass, $pseudo, $color);
 			$data["status"] = true;
