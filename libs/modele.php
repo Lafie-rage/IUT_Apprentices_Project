@@ -1,12 +1,18 @@
 <?php
 include_once("maLibSQL.pdo.php");
+include_once "config.php";
 // définit les fonctions SQLSelect, SQLUpdate...
 
 // Utilisateurs ///////////////////////////////////////////////////////////////
 
 function register($log, $pass, $pseudo, $color) {
-  $sql = "INSERT INTO USERS(login, password, pseudo, color) VALUES ('$log', '$pass', '$pseudo', '$color')";
-  return SQLInsert($sql);
+  global $dbh;
+  $dbh->prepare("INSERT INTO USERS(login, password, pseudo, color) VALUES (:log, :pass, :pseudo, :color)");
+  $dbh->bindParam(':log', $log);
+  $dbh->bindParam(':pass', $pass);
+  $dbh->bindParam(':pseudo', $pseudo);
+  $dbh->bindParam(':color', $color);
+  return SQLInsert($dbh);
 }
 
 function getUser($id) {

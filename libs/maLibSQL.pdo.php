@@ -1,6 +1,6 @@
 <?php
 
-include_once "config.php";
+
 
 /**
  * @file maLibSQL.php
@@ -56,21 +56,9 @@ function SQLDelete($sql) {return SQLUpdate($sql);}
  * @pre Les variables  $BDD_login, $BDD_password $BDD_chaine doivent exister
  * @return Renvoie l'insert ID ... utile quand c'est un numéro auto
  */
-function SQLInsert($sql)
+function SQLInsert($dbh)
 {
-	global $BDD_host;
-	global $BDD_base;
-	global $BDD_user;
-	global $BDD_password;
-
-	try {
-		$dbh = new PDO("mysql:host=$BDD_host;dbname=$BDD_base", $BDD_user, $BDD_password);
-	} catch (PDOException $e) {
-		die("<font color=\"red\">SQLInsert: Erreur de connexion : " . $e->getMessage() . "</font>");
-	}
-
-	$dbh->exec("SET CHARACTER SET utf8");
-	$res = $dbh->query($sql);
+	$res = $dbh->execute();
 	if ($res === false) {
 		$e = $dbh->errorInfo();
 		die("<font color=\"red\">SQLInsert: Erreur de requete : " . $e[2] . "</font>");
