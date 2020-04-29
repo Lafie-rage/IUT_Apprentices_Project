@@ -19,19 +19,19 @@ function valider($nom,$type="REQUEST") {
 	switch($type)	{
 		case 'REQUEST':
 		if(isset($_REQUEST[$nom]) && !($_REQUEST[$nom] == ""))
-			return proteger($_REQUEST[$nom]);
+			return $_REQUEST[$nom];
 		break;
 		case 'GET':
 		if(isset($_GET[$nom]) && !($_GET[$nom] == ""))
-			return proteger($_GET[$nom]);
+			return $_GET[$nom];
 		break;
 		case 'POST':
 		if(isset($_POST[$nom]) && !($_POST[$nom] == ""))
-			return proteger($_POST[$nom]);
+			return $_POST[$nom];
 		break;
 		case 'COOKIE':
 		if(isset($_COOKIE[$nom]) && !($_COOKIE[$nom] == ""))
-			return proteger($_COOKIE[$nom]);
+			return $_COOKIE[$nom];
 		break;
 		case 'SESSION':
 		if(isset($_SESSION[$nom]) && !($_SESSION[$nom] == ""))
@@ -71,7 +71,7 @@ function getValue($nom,$defaut=false,$type="REQUEST") {
 * Y COMPRIS LES ARGUMENTS ENTIERS !!
 * @param string $str
 */
-function proteger($str) {
+/*function proteger($str) {
 	// attention au cas des select multiples !
 	// On pourrait passer le tableau par r�f�rence et �viter la cr�ation d'un tableau auxiliaire
 	if (is_array($str)) {
@@ -84,7 +84,7 @@ function proteger($str) {
 	else
 		return addslashes ($str);
 	//return str_replace("'","''",$str); 	//utile pour les serveurs de bdd Crosoft
-}
+}*/
 
 
 
