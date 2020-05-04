@@ -1,4 +1,4 @@
-  
+
 .navIndex {
     list-style-type: none;
     border-bottom: solid 1px rgb(218, 218, 218);
@@ -129,9 +129,8 @@
 }
 
 body {
-    background-image: url(../arriereplan.png);
+    background-image: url(../ressources/arriereplan.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
-
