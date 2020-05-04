@@ -6,6 +6,8 @@ $BDD_user="dev";
 $BDD_password="z7A*p9JjB8^}";
 $BDD_base="CAN-APP_Dev";
 
+// Test gitignore
+
 try {
   $dbh = new PDO("mysql:host=$BDD_host;dbname=$BDD_base", $BDD_user, $BDD_password);
 } catch (PDOException $e) {
