@@ -1,12 +1,9 @@
 <?php
 
 // MACHINE LINUX
-$BDD_host="51.210.10.236;port=3306";
-//$BDD_host="localhost;port=3306";
+$BDD_host="localhost;port=3306";
 $BDD_user="dev";
 $BDD_password="z7A*p9JjB8^}";
-//$BDD_user="root";
-//$BDD_password="root";
 $BDD_base="CAN-APP_Dev";
 
 try {
