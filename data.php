@@ -18,27 +18,37 @@ session_start();
 	{
 
 		// Utilisateurs /////////////////////////////////////////////////////////////
-		// http://localhost/data.php?action=register&log=monLog&pseudo=monPseudo&pass=monPassword
 		case "register" :
-			$log = valider("log");
-			if(loginExist($log) === false) {
+			$firstname = valider("firstname");
+			/*if(loginExist($log) === false) {
 				$data["feedback"] = "invalid log";
 				break;
-			}
-			$pseudo = valider("pseudo");
-			if(pseudoExist($pseudo) === false) {
+			}*/
+			$name = valider("name");
+			/*if(pseudoExist($pseudo) === false) {
 				$data["feedback"] = "invalid log";
 				break;
+<<<<<<< HEAD
 			}
 			$pass = valider("pass");
 			$pass = hash('sha256', $pass); // Utiliser password_hash()...
+=======
+			}*/
+			$birthday = valider("birthday");
+			$mail = valider("mail");
+			$password = valider("password");
+			$password = hash('sha256', $password); // Utiliser password_hash()...
+			$username = valider("username");
+			$id_role = valider("id_role");
+			$id_category = valider("id_category");
+>>>>>>> updateSecurity_corentin
 			$color = valider("color");
-			$data["id"] = register($log, $pass, $pseudo, $color);
+			$data["id"] = register($firstname, $name, $birthday, $mail, $password, $username, $id_role, $id_category);
 			$data["status"] = true;
 			$data["feedback"] = "ok";
 
 			$_SESSION["connected"] = true;
-			$_SESSION["pseudo"] = $pseudo;
+			$_SESSION["username"] = $username;
 			$_SESSION["id"] = $data["id"];
 		break;
 
