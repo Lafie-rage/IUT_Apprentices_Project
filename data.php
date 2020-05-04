@@ -28,20 +28,14 @@ session_start();
 			/*if(pseudoExist($pseudo) === false) {
 				$data["feedback"] = "invalid log";
 				break;
-<<<<<<< HEAD
-			}
-			$pass = valider("pass");
-			$pass = hash('sha256', $pass); // Utiliser password_hash()...
-=======
 			}*/
 			$birthday = valider("birthday");
 			$mail = valider("mail");
 			$password = valider("password");
-			$password = hash('sha256', $password); // Utiliser password_hash()...
+			$password = password_hash($password, PASSWORD_DEFAULT);
 			$username = valider("username");
 			$id_role = valider("id_role");
 			$id_category = valider("id_category");
->>>>>>> updateSecurity_corentin
 			$color = valider("color");
 			$data["id"] = register($firstname, $name, $birthday, $mail, $password, $username, $id_role, $id_category);
 			$data["status"] = true;
