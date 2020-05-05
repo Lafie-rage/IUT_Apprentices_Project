@@ -46,6 +46,13 @@ session_start();
 			$_SESSION["id"] = $data["id"];
 		break;
 
+		case 'usernameExists' :
+			$username = valider("username");
+			$data["exist"] = usernameExists($username);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
 		case 'connexion' :
 			$data['log'] = valider("login");
 			$pass = valider("password");
