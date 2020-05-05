@@ -74,16 +74,18 @@ function SQLGetChamp($dbh)
 		die("<font color=\"red\">SQLGetChamp: Erreur de requete : " . $e[2] . "</font>");
 	}
 
-	$num = $res->rowCount();
+	$dbh->setFetchMode(PDO::FETCH_NUM);
+
+	$res = $dbh->fetch();
+
+	$num = count($res);
+
 	$dbh = null;
 
 	if ($num==0) return false;
 
-	$res->setFetchMode(PDO::FETCH_NUM);
-
-	$ligne = $res->fetch();
-	if ($ligne == false) return false;
-	else return $ligne[0];
+	if ($res == false) return false;
+	else return $res[0];
 
 }
 
