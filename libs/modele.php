@@ -1,13 +1,15 @@
 <?php
 include_once("maLibSQL.pdo.php");
-include_once "config.php";
 // définit les fonctions SQLSelect, SQLUpdate...
+include_once "config.php";
+// Définit les paramètres de la DB et l'ouvre
 
 // Users //////////////////////////////////////////////////////////////////////
 
 function register($firstname, $name, $birthday, $mail, $password, $username, $id_role, $id_category) {
   global $dbh;
-  $sth = $dbh->prepare("INSERT INTO `users`(firstname, name, birthday, mail, password, username, id_role, id_category) VALUES (:firstname, :name, :birthday, :mail, :password, :username, :id_role, :id_category)");
+  $query = "INSERT INTO `users`(firstname, name, birthday, mail, password, username, id_role, id_category) VALUES (:firstname, :name, :birthday, :mail, :password, :username, :id_role, :id_category)";
+  $sth = $dbh->prepare($query);
   $sth->bindParam(':firstname', $firstname);
   $sth->bindParam(':name', $name);
   $sth->bindParam(':birthday', $birthday);
