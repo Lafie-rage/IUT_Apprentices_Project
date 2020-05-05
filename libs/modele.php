@@ -221,54 +221,68 @@ function getTypeFieldByRun() {
 
 }
 
-function addTypeRun() {
-
+function addTypeRun($nom, $distance){
+  $sql= "INSERT INTO type_run (label_type_run, distance_type_run) VALUES ( '$nom', '$distance'); "
 }
 
-function delTypeRun() {
-
+function delTypeRun($id){
+  $sql= "DELETE from type_run where id_type_run=$id;"
+  return SQLDelete($sql);
 }
 
-function updateTypeRun() {
-
+function updateTypeRun($id, $nom, $distance){
+  $sql= "UPDATE type_run SET label_type_run = '$nom', distance_type_run='$distance' where id_type_run = '$id' ;"
+  return SQLUpdate($sql);
 }
 
-function getTypeRun() {
-
+function getTypeRun($id){
+$sql= "SELECT * from type_run where id_type_run='$id';"
 }
 
-function getAllTypesRun() {
-
+function getTypesRun($id){
+$sql= "SELECT * from type_run;"
 }
 
-function getTypeRunByRun() {
-
+function getTypeRunByRun($id){
+$sql= "SELECT * from type_run as t inner join run as r on t.id_type_run=r.id_run where r.id_run='$id';"
+return parcoursRs(SQLSelect($sql));
 }
 
-function addRegistered_run() {
-
+function getRegisterRun_by_user($id){
+$sql= "SELECT * from register_run where id_user='$id';"
 }
 
-function delRegistered_run() {
-
+function getRegisterRun_by_run($id){
+$sql= "SELECT * from register_run where id_run='$id';"
 }
 
-function getRegistered_run() {
-
+function getRegistersRun($id){
+$sql= "SELECT * from register_run;"
 }
 
-function getAllRegistered_runs() {
-
+function delRegisterRun_by_user($id){
+$sql= "DELETE from register_run where id_user=$id;"
+return SQLDelete($sql);
 }
 
-function getRegistered_runByRun() {
-
+function delRegisterRun_by_run($id){
+$sql= "DELETE from register_run where id_run=$id;"
+return SQLDelete($sql);
 }
 
-function getRegistered_runByUser() {
-
+function getRegisterRunByRun($id){
+$sql= "SELECT * from register_run as re inner join run as r on re.id_run=r.id_run where re.id_run='$id';"
+return parcoursRs(SQLSelect($sql));
 }
 
+function getRegisterRunByUser($id){
+$sql= "SELECT * from register_run as re inner join users as s on re.id_user=r.id_user where re.id_user='$id';"
+return parcoursRs(SQLSelect($sql));
+}
+
+function addRegister_Run(){
+$sql= "INSERT INTO register_run VALUES ($id_user, $id_run, NOW()); "
+}
 
 
  // Exemple de fonctions... (Ancien fonctionnement, regardez la fonction register pour voir la nouvelle synthaxe...)
