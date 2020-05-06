@@ -167,6 +167,60 @@ session_start();
 			$data["feedback"] = "ok";
 		break;
 
+
+		// IncludeCharge /////////////////////////////////////////////////////////////////
+
+		case 'addIncludeCharge':
+			$cost = valider("cost");
+			$comment = valider("comment");
+			$data["id"] = addIncludeCharge($cost, $comment);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
+		case 'delIncludeCharge': 
+			$id_charge = valider("id_charge");
+			$data["INCLU"] = delIncludeCharge($id_charge);
+			$data["status"] = true;
+			$data["feedback"] = "ok";	
+		break;
+
+		case 'updateIncludeCharge':
+			$cost = valider("cost");
+			$comment = valider("comment");
+			$id_charge = valider("id_charge");
+			$data["INCLU"] = updateIncludeCharge($cost, $comment, $id_charge);
+			$data["status"] = true;
+			$data["feedback"] = "ok";	
+		break;
+
+		case 'getIncludeCharge':
+			$id_charge = valider("id_charge");
+			$data["INCLU"] = getIncludeCharge($id_charge);
+			$data["status"] = true;
+			$data["feedback"] = "ok";	
+		break;
+
+		case 'getIncludeCharges':
+			$data["INCLU"] = getIncludeCharges();
+			$data["status"] = true;
+			$data["feedback"] = "ok";	
+		break;
+
+		case 'getIncludeChargesByRun':
+			$id_run = valider("id_run");
+			$data["INCLU"] = getIncludeChargesByRun($id_run);
+			$data["status"] = true;
+			$data["feedback"] = "ok";	
+		break;
+
+		case 'getIncludeChargesByTypeCost':
+			$id_type_cost = valider("id_type_cost")
+			$data["INCLU"] = getIncludeChargesByTypeCost($id_type_cost);
+			$data["status"] = true;
+			$data["feedback"] = "ok";	
+		break;
+
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
 			$data["action"] = "default";
