@@ -29,6 +29,11 @@ function getUser($id) {
   return SQLSelect($sth);
 }
 
+/*
+  Verify if the username provided exists.
+  $username : the user's username
+  Return : true is it exists. False otherwise.
+*/
 function usernameExists($username) {
   global $dbh;
   $query = "SELECT name FROM users where username=:username;";
