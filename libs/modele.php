@@ -29,6 +29,11 @@ function getUser($id) {
   return SQLSelect($sth);
 }
 
+/*
+  Verify if the username provided exists.
+  $username : the user's username
+  Return : true is it exists. False otherwise.
+*/
 function usernameExists($username) {
   global $dbh;
   $query = "SELECT name FROM users where username=:username;";
@@ -224,62 +229,44 @@ function getParticipatesRunByUser($id_user){
 
 function addIncludeCharge($cost, $comment){
   global $dbh;
-  $query = "INSERT INTO `include_charge`(id_participate,id_charge, cost,comment) VALUES (:id_participate, :id_charge, :cost, :comment)";
-  $sth = $dbh->prepare($query);
-  $sth->bindParam(':id_participate', $id_participate);
-  $sth->bindParam(':id_charge', $id_charge);
-  $sth->bindParam(':cost', $cost);
-  $sth->bindParam(':comment', $comment);
-  return SQLInsert($sth);
+  $query = "INSERT INTO include_charge(id_participate,id_charge, cost,comment) VALUES ($id_participate, $id_charge, '$cost', '$comment')";
+  return SQLInsert($query);
 }
 
 function delIncludeCharge($id_charge){
   global $dbh;
-  $query = "DELETE FROM `include_charge` WHERE id_charge = :id_charge";
-  $sth = $dbh->prepare($query);
-  $sth->bindParam(':id_charge', $id_charge);
-  return SQLDelete($sth);
+  $query = "DELETE FROM include_charge WHERE id_charge = $id_charge";
+  return SQLDelete($query);
 }
 
 function updateIncludeCharge($cost, $comment, $id_charge){
   global $dbh;
-  $query = "UPDATE `include_charge` SET cost = :cost, comment = :comment WHERE id_charge = :id_charge";
-  $sth = $dbh->prepare($query);
-  $sth->bindParam(':cost', $cost);
-  $sth->bindParam(':comment', $comment);
-  $sth->bindParam(':id_charge', $id_charge);
-  return SQLUpdate($sth);
+  $query = "UPDATE include_charge SET cost = '$cost', comment = '$comment' WHERE id_charge = $id_charge";
+  return SQLUpdate($query);
 }
 
 function getIncludeCharge($id_charge){
   global $dbh;
-  $query = "SELECT * FROM `include_charge` WHERE id_charge = :id_charge";
-  $sth = $dbh->prepare($query);
-  $sth->bindParam(':id_charge', $id_charge);
-  return SQLSelect($sth);
+  $query = "SELECT * FROM include_charge WHERE id_charge = $id_charge";
+  return SQLSelect($query);
 }
 
 function getIncludeCharges(){
   global $dbh;
-  $query = "SELECT * FROM `include_charge`";
-  $sth = $dbh->prepare($query);
-  return SQLSelect($sth);
+  $query = "SELECT * FROM include_charge";
+  return SQLSelect($query);
 }
 
 function getIncludeChargesByRun($id_run){
   global $dbh;
-  $query = "SELECT * FROM `include_charge` as i, `participate_run` as p WHERE p.id_run = :id_run AND i.participate = p.participate";
-  $sth = $dbh->prepare($query);
-  $sth->bindParam(':id_run', $id_run);
-  return SQLSelect($sth);
+  $query = "SELECT * FROM include_charge as i, participate_run as p WHERE p.id_run = $id_run AND i.participate = p.participate";
+  return SQLSelect($query);
 }
 
 function getIncludeChargesByTypeCost($id_type_cost){
   global $dbh;
-  $query = "SELECT * FROM `include_charge` as i, `type_cost` as t WHERE i.id_charge = :id_type_cost AND i.id_charge = t.id_type_cost";
-  $sth = $dbh->prepare($query);
-  $sth->bindParam(':id_type_cost', $id_type_cost);
-  return SQLSelect($sth);
+  $query = "SELECT * FROM include_charge as i WHERE i.id_participate = $id_type_cost ";
+  return SQLSelect($query);
 }
 
 function addTypeCost($id_type_cost, $label_type_cost) {
