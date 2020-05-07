@@ -78,7 +78,7 @@ function SQLGetChamp($dbh)
 
 	$res = $dbh->fetch();
 
-	$num = count($res);
+	$num = $dbh->rowCount();
 
 	$dbh = null;
 
@@ -104,7 +104,7 @@ function SQLSelect($dbh)
 		die("<font color=\"red\">SQLSelect: Erreur de requete : " . $e[2] . "</font>");
 	}
 
-	$num = $res->rowCount();
+	$num = $dbh->rowCount();
 	$dbh = null;
 
 	if ($num==0) return false;

@@ -20,20 +20,16 @@ session_start();
 		// Utilisateurs /////////////////////////////////////////////////////////////
 		case "register" :
 			$firstname = valider("firstname");
-			/*if(loginExist($log) === false) {
-				$data["feedback"] = "invalid log";
-				break;
-			}*/
 			$name = valider("name");
-			/*if(pseudoExist($pseudo) === false) {
-				$data["feedback"] = "invalid log";
-				break;
-			}*/
 			$birthday = valider("birthday");
 			$mail = valider("mail");
 			$password = valider("password");
 			$password = password_hash($password, PASSWORD_DEFAULT);
 			$username = valider("username");
+			if(usernameExists($username)) {
+				$data["feedback"] = "Username already used";
+				break;
+			}
 			$id_role = valider("id_role");
 			$id_category = valider("id_category");
 			$data["id"] = register($firstname, $name, $birthday, $mail, $password, $username, $id_role, $id_category);
@@ -45,32 +41,26 @@ session_start();
 			$_SESSION["id"] = $data["id"];
 		break;
 
-		case 'usernameExists' :
-			$username = valider("username");
-			$data["exist"] = usernameExists($username);
-			$data["status"] = true;
-			$data["feedback"] = "ok";
-		break;
-
-		case 'connexion' :
-			$data['log'] = valider("login");
+		case 'connection' :
+			$data['username'] = valider("username");
 			$pass = valider("password");
-			$data['password'] = hash('sha256', $pass);
-			if ($data["log"])
-			if ($data["password"]) {
-				if ($id = validerUser($data["log"], $data["password"])) {
-					$dataU = getUser($id);
-					$data["user"] = $dataU[0];
-					$data["status"] = true;
-					$data["feedback"] = "connecté";
+			if(!usernameExists($data['username'])) {
+				$data["status"] = true;
+				$data["feedback"] = "Invalid username";
+				break;
+			}
+			if (password_verify($pass, getPasswordForUser($data["username"]))) {
+				$dataU = getUserByUsername($data['username']);
+				$data["user"] = $dataU;
+				$data["status"] = true;
+				$data["feedback"] = "connected";
 
-					$_SESSION["connected"] = true;
-					$_SESSION["pseudo"] = $data["user"]["pseudo"];
-					$_SESSION["id"] = $data["user"]["id"];
-				}
+				$_SESSION["connected"] = true;
+				$_SESSION["pseudo"] = $data["user"]["username"];
+				$_SESSION["id"] = $data["user"]["id"];
 			}
 			else
-				$data["feedback"] = "erreur de connexion";
+				$data["feedback"] = "Invalid password";
 		break;
 
 		case 'isConnected' :

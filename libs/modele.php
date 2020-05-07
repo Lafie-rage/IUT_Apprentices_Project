@@ -42,41 +42,85 @@ function usernameExists($username) {
   return SQLGetchamp($sth) !== false;
 }
 
-function validUser() {
+function getPasswordForUser($username) {
   global $dbh;
-  $query = "SELECT id FROM users WHERE username='$username' AND password='$pass';";
-  return parcoursRs(SQLSelect($query));
+  $query = "SELECT password FROM users WHERE username=:username";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':username', $username);
+  return SQLGetChamp($sth);
 }
 
-function updateUser() {
+function updateUser($firstname, $name, $birthday, $mail, $pass, $username, $id) {
   global $dbh;
-  $query = "UPDATE users SET firstname='$firstname', name='$name', birthday='$date_birth', mail='$mail', password='$pass', username='$username'
-WHERE id_users = '$user';";
-  return parcoursRs(SQLSelect($query));
+  $query = "UPDATE users
+            SET firstname=:firstname, name=:name, birthday=:birthday,
+                mail=:mail, password=:pass, username=:username
+            WHERE id_users = :id;";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':firstname', $firstname);
+  $sth->bindParam(':name', $name);
+  $sth->bindParam(':birthday', $birthday);
+  $sth->bindParam(':mail', $mail);
+  $sth->bindParam(':pass', $pass);
+  $sth->bindParam(':username', $username);
+  $sth->bindParam(':id', $id);
+  return SQLUpdate($sth);
+}
+
+function getUserByUsername($username) {
+  global $dbh;
+  $query = "SELECT id_user, firstname, name, birthday, mail
+            FROM users
+            WHERE username=:username;";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':username', $username);
+  return SQLSelect($sth);
 }
 
 function getUsersByRole($id) {
   global $dbh;
-  $query = "SELECT * ,R.label_role FROM users as U INNER JOIN role as R ON U.id_role = R.id_role GROUP BY R.label_role;";
-  return parcoursRs(SQLSelect($query));
+  $query = "SELECT * FROM users as U
+            INNER JOIN role as R ON U.id_role = R.id_role
+            WHERE U.id_role = :id
+            GROUP BY R.label_role;";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':id', $id);
+  return parcoursRs(SQLSelect($sth));
 }
 
 function getUsersByCatAge($id) {
   global $dbh;
-  $query = "SELECT * ,C.label_categroy FROM users as U INNER JOIN category_age as ON U.id_category = C.id_category GROUP BY C.label_category;";
-  return parcoursRs(SQLSelect($query));
+  $query = "SELECT * FROM users as U
+            INNER JOIN category_age as ON U.id_category = C.id_category
+            WHERE U.id_category = :id
+            GROUP BY C.label_category;";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':id', $id);
+  return parcoursRs(SQLSelect($sth));
 }
 
 function getUsersByRun($id) {
   global $dbh;
-  $query = "SELECT * ,R.label_run FROM users as U INNER JOIN participate_run as P ON U.id_users = P.id_users INNER JOIN run as R ON P.id_run = R.id_run GROUP BY C.label_category;";
-  return parcoursRs(SQLSelect($query));
+  $query = "SELECT * FROM users as U
+            INNER JOIN participate_run as P ON U.id_users = P.id_users
+            INNER JOIN run as R ON P.id_run = R.id_run
+            WHERE R.id_run = :id
+            GROUP BY C.label_category;";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':id', $id);
+  return parcoursRs(SQLSelect($sth));
 }
 
 function getUsersByClub($id) {
   global $dbh;
-  $query = "SELECT * ,C.label_club FROM users as U INNER JOIN clubs_users as CU ON U.id_user = CU.id_user INNER JOIN clubs as C ON CU.id_club = C.id_club GROUP BY C.label_club;";
-  return parcoursRs(SQLSelect($query));
+  $query = "SELECT * FROM users as U
+            INNER JOIN clubs_users as CU ON U.id_user = CU.id_user
+            INNER JOIN clubs as C ON CU.id_club = C.id_club
+            WHERE C.id_club = :id
+            GROUP BY C.label_club;";
+  $sth = $dbh->prepare($query);
+  $sth->bindParam(':id', $id);
+  return parcoursRs(SQLSelect($sth));
 }
 
 function addClub(){
