@@ -14,11 +14,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.8/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
 <link href="css/master.css" rel="stylesheet">
+
 </head>
 
 <body>
   <!-- DEBUT DU PROJET-->
-
   <img id="logo" src="https://cdn.discordapp.com/attachments/691594199048650803/704348261850415165/logo-canapp.png"
     alt="">
 
@@ -44,12 +44,11 @@
   </ul>
 
 
-
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-8 p-0">
-        <!--Carousel Wrapper-->
-        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Carroussel d'image -->
+  <div class="container-fluid">
+  	<div class="row">
+        <nav class="col-md-7">
+          <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
           <!--Indicators-->
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
@@ -62,22 +61,25 @@
             <!--First slide-->
             <div class="carousel-item active">
               <img class="d-block w-100"
-                src="https://images.unsplash.com/photo-1528445253696-6597e9abc5cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
-                alt="First slide">
+                src="ressources/ban.png"
+                alt="First slide"
+                id="img">
             </div>
             <!--/First slide-->
             <!--Second slide-->
             <div class="carousel-item">
               <img class="d-block w-100"
-                src="https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2553&q=80"
-                alt="Second slide">
+                src="ressources/ban1.png"
+                alt="Second slide"
+                id="img">
             </div>
             <!--/Second slide-->
             <!--Third slide-->
             <div class="carousel-item">
               <img class="d-block w-100"
-                src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
-                alt="Third slide">
+                src="ressources/ban2.png"
+                alt="Third slide"
+                id="img">
             </div>
             <!--/Third slide-->
           </div>
@@ -94,122 +96,110 @@
           <!--/.Controls-->
         </div>
         <!--/.Carousel Wrapper-->
+        </nav>
 
-        <p class="h1 mt-5 pb-4">Bienvenue sur le CAN'APP, l'application dédiée à l'univers du sport</p>
+        <!--Menu de droite -->
+        <div class="col-md-5" id="menu">
 
-        <p>
-          CAN'APP est la nouvelle application de gestion de vos courses !
-          Cette application permet de connaître les prochaines courses organisées.
-        </p>
-
-        <p>
-          Grâce à un système de partage, il sera possible en tant que membre, d'indiquer vos prochaines participations
-          aux futures courses mais aussi d'indiquer celles auxquelles vous avez déjà participé.
-        </p>
-
-        <p>
-          Vous pourrez indiquer les dépenses pour chaques compétitions, consulter le résultats à vos courses, ainsi que
-          vos performances.
-        </p>
-
-      </div>
-      <div class="col-md-4">
         <ul id="menuRight">
           <li>
-            <div class="row">
-              <div class="col-md-3">
-                <img width="100%"
-                  src="https://images.unsplash.com/photo-1533015598395-ef428edc7a84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80"
-                  alt="">
-              </div>
-              <div class="col-md-9 pt-4">
-                <a href="">Duathlon</a>
+            <div class="row" id="gris">
+              	<div class="col-md-2">
+	                <img width="100%"
+	                  src="ressources/duathlon.jpg"
+	                  alt="">
+              	</div>
+                <div class="col-md-9 pt-4" id="padding">
+                <a href="" id="categorie">Duathlon</a>
               </div>
             </div>
           </li>
           <li>
-            <div class="row">
-              <div class="col-md-3">
+            <div class="row" id="gris">
+              <div class="col-md-2">
                 <img width="100%"
-                  src="https://images.unsplash.com/photo-1533547477463-bcffb9ef386d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80"
-                  alt="">
+                  src="ressources/triathlon.jpg"
+                  alt=""
+                  >
               </div>
               <div class="col-md-9 pt-4">
-                <a href="">Triathlon</a>
+                <a href="" id="categorie">Triathlon</a>
               </div>
             </div>
-          </li>
           </li>
           <li>
-            <div class="row">
-              <div class="col-md-3">
-                <img width="100%" src="https://curtamais.com.br/uploads/conteudos/3de19375df2504d92e0cd8cf1ac13efe.jpg"
-                  alt="">
+            <div class="row" id="gris">
+              <div class="col-md-2">
+                <img width="100%" src="ressources/swimrun.jpg"
+                  alt=""
+                  >
               </div>
               <div class="col-md-9 pt-4">
-                <a href="">Aquathlon</a>
+                <a href="" id="categorie">Aquathlon</a>
               </div>
             </div>
-          </li>
           </li>
           <li>
-            <div class="row">
-              <div class="col-md-3">
+            <div class="row" id="gris">
+              <div class="col-md-2">
                 <img width="100%"
-                  src="https://images.unsplash.com/photo-1531140713905-b3abd17361c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2167&q=80"
+                  src="ressources/run.jpg"
                   alt="">
               </div>
               <div class="col-md-9 pt-4">
-                <a href="">Run and Bike</a>
+                <a href="" id="categorie">Run and Bike</a>
               </div>
             </div>
-          </li>
           </li>
           <li>
-            <div class="row">
-              <div class="col-md-3">
+            <div class="row" id="gris">
+              <div class="col-md-2">
                 <img width="100%"
-                  src="https://images.unsplash.com/flagged/photo-1556746834-1cb5b8fabd54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80"
+                  src="ressources/plus.jpg"
                   alt="">
               </div>
-              <div class="col-md-9 pt-4">
-                <a href="">Voir plus</a>
+              <div class="col-md-9 pt-4" id="all">
+                <a href="" id="categorie">Voir plus</a>
               </div>
             </div>
-          </li>
           </li>
         </ul>
       </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-7 p-0">
+        <!--Carousel Wrapper-->
+
+
+        <p class="h1 mt-5 pb-4" id="categorie1">Bienvenue sur CAN'APP, l'application dediee a l'univers du sport !</p>
+
+        <p id="impact">
+          CAN'APP est la nouvelle application de gestion de vos courses !
+          Grâce à cette application, il est possible de suivre les prochaines courses qui seront organisées.
+        </p>
+
+        <p id="impact">
+          Doté d'un système de partage, il vous sera possible en tant que membres, d'indiquer vos prochaines participations ainsi que marquer celle déjà effectuées. Vous pourrez ainsi y renseigner vos dépenses réalisées en détail ainsi que vos performances.
+        </p>
+
+        <p id="impact">
+          CAN'APP c'est l'application de suivi des courses de votre club !
+        </p>
+
+      </div>
+
+
+
+
     </div>
   </div>
 
-<!-- <br> to try menu sticky css  -->
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
- 
+   <div class="col-md-5 p-0" id="velo">
+        <!--Carousel Wrapper-->
+        <img class=img-responsive src="ressources/velo.png" id="velo" width="1000">
+
+      </div>
 
   <!-- /FIN DU PROJET-->
 

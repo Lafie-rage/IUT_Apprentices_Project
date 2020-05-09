@@ -1,15 +1,21 @@
+@font-face {
+    font-family: "Blacklisted";
+    src: url('Blacklisted.ttf');
+}
+
+body{
+    background-image: url('../ressources/arriereplan.png');
+}
+
 .navIndex {
     list-style-type: none;
     border-bottom: solid 1px rgb(218, 218, 218);
     background-color: rgb(238, 238, 238);
     z-index: 10;
-    position: relative;
+    position: sticky;
     top: 0;
-    /* width: 50%; */
     width: 100%;
     padding-top: 1px;
-    /* border-left: solid 10px #3498db;
-    border-right: solid 10px #3498db; */
     margin-top: 76px;
 
 }
@@ -22,7 +28,6 @@
     font-size: 15px;
 }
 
-.navIndex>li:hover {}
 
 #courses,
 #resultats,
@@ -90,7 +95,6 @@
 }
 
 #menuRight>li>.row>* {
-    /* background: rgb(238, 238, 238); */
     display: block;
     padding: 10px 10px;
     font-size: 20px;
@@ -102,7 +106,6 @@
 }
 
 #menuRight>li>.row>*>a::after {
-    content: ' >';
     transition: all .2s;
 }
 
@@ -112,4 +115,102 @@
 
 #menuRight>li>.row>*>a:hover {
     color: #000;
+}
+
+.carousel-item{
+    margin-bottom: -4%;
+}
+
+.carousel-inner{
+    box-shadow: 8px 8px 8px black;
+}
+
+#menuRight{
+    box-shadow: 8px 8px 8px black;
+}
+
+#gris{
+    background-color: #c5bfbf;
+    border : 1px solid black;
+}
+
+#categorie{
+    font-size: 40px;
+    font-family: Blacklisted;
+    padding-left: 1%;
+}
+
+#categorie1{
+    font-size: 40px;
+    font-family: Blacklisted;
+    padding-left: 1%;
+}
+
+#impact{
+    font-size: 28px;
+    font-family: Impact;
+    color: grey;
+    text-align: justify;
+    padding-left: 2%;
+    margin-right: 2%;
+}
+
+#velo{
+    margin-top: -12%;
+    max-width : 100%;
+    height:  auto;
+    display: block;
+    float: right;
+}
+
+.d-block .w-100{
+    box-shadow: 8px 8px 12px black;
+}
+
+@media screen and (max-width: 640px) {
+    img{
+        width: 20%;
+    }
+
+    #categorie{
+        margin-left: 30%;
+        font-size: 30px;
+        margin-top: -20%;
+        position: absolute;
+    }
+
+    #menu{
+        margin-top: 10%;
+        margin-right: -2%;
+    }
+
+    #categorie1{
+        font-size: 20px;
+    }
+
+    #gris{
+        margin-right: -2%;
+    }
+
+    li{
+        margin-bottom: -8%;
+    }
+
+    #voirplus{
+        margin-bottom: -5%;
+    }
+
+    #impact{
+        font-size: 20px;
+    }
+
+    #velo{
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+
+    #all{
+        margin-bottom: -7%;
+    }
 }
