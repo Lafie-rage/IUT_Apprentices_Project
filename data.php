@@ -56,7 +56,7 @@ session_start();
 				$data["feedback"] = "connected";
 
 				$_SESSION["connected"] = true;
-				$_SESSION["pseudo"] = $data["user"]["username"];
+				$_SESSION["username"] = $data["user"]["username"];
 				$_SESSION["id"] = $data["user"]["id"];
 			}
 			else

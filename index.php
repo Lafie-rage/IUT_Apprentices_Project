@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html lang="fr">
+<!DOCTYPE html>
 
 <head>
   <meta charset="utf-8">
@@ -18,30 +18,10 @@
 </head>
 
 <body>
-  <!-- DEBUT DU PROJET-->
-  <img id="logo" src="https://cdn.discordapp.com/attachments/691594199048650803/704348261850415165/logo-canapp.png"
-    alt="">
-
-  <div class="sky">
-    <div class="container-fluid" id="onNav">
-
-    </div>
-  </div>
-
-  <ul class="container navIndex">
-    <li>
-      <a class="text-uppercase" id="accueil"><i class="fas fa-running"></i>&nbsp; Courses</a>
-    </li>
-    <li>
-      <a class="text-uppercase" id="resultats"><i class="fas fa-poll"></i>&nbsp; Résultats</a>
-    </li>
-    <li>
-      <a class="text-uppercase" id="depenses"><i class="fas fa-dollar-sign"></i>&nbsp; Dépenses</a>
-    </li>
-    <li>
-      <a class="text-uppercase" id="a-propos"><i class="fas fa-home"></i>&nbsp; À propos</a>
-    </li>
-  </ul>
+  <?php
+    include_once "popup.php";
+    include_once "header.php";
+  ?>
 
 
   <!--Carroussel d'image -->
@@ -195,11 +175,11 @@
     </div>
   </div>
 
-   <div class="col-md-5 p-0" id="velo">
-        <!--Carousel Wrapper-->
-        <img class=img-responsive src="ressources/velo.png" id="velo" width="1000">
+ <div class="col-md-5 p-0" id="velo">
+      <!--Carousel Wrapper-->
+      <img class=img-responsive src="ressources/velo.png" id="velo" width="1000">
 
-      </div>
+    </div>
 
   <!-- /FIN DU PROJET-->
 

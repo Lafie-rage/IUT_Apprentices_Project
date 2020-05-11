@@ -11,7 +11,7 @@ body{
     list-style-type: none;
     border-bottom: solid 1px rgb(218, 218, 218);
     background-color: rgb(238, 238, 238);
-    z-index: 10;
+    z-index: 9;
     position: sticky;
     top: 0;
     width: 100%;
