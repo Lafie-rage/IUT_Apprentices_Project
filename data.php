@@ -210,6 +210,92 @@ session_start();
 			$data["feedback"] = "ok";
 		break;
 
+		// Runs ////////////////////////////////////////////////////////////////////////
+
+		case 'addRun':
+			$label = valider("label");
+			$date = valider("date");
+			$distance = valider("distance");
+			$unit = valider("unit");
+			$city = valider("city");
+			$field = valider("field");
+			$type = valider("type");
+			$category = valider("category");
+			$data["id"] = addRun($label,$date,$distance,$unit,$city,$field,$type,$category);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
+		case 'delRun':
+			$id = valider("id");
+			$data["id"] = delRun($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
+		case 'getRuns':
+			$data["id"] = getRuns();
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
+		case 'getRun':
+			$id = valider("id");
+			$data["id"] = getRun($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
+		case 'getRunsByType_run':
+			$id = valider("id");
+			$data["id"] = getRunsByType_run($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getRunsByType_field':
+			$id = valider("id");
+			$data["id"] = getRunsByType_field($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'updateRun':
+			$id = valider("id");
+			$label = valider("label");
+			$date = valider("date");
+			$distance = valider("distance");
+			$unit = valider("unit");
+			$city = valider("city");
+			$data["id"] = updateRun($id,$label,$date,$distance,$unit,$city);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+			
+		case 'getRunsByCategoryAge':
+			$id = valider("id");
+			$comment = valider("id");
+			$data["id"] = getRunsByCategoryAge($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+			break;
+		
+		case 'getRunsByUser':
+			$id = valider("id");
+			$comment = valider("id");
+			$data["id"] = getRunsByUser($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getRunsByClub':
+			$id = valider("id");
+			$comment = valider("id");
+			$data["id"] = getRunsByClub($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
 			$data["action"] = "default";
