@@ -353,6 +353,42 @@ session_start();
 		
 		break;
 
+		// TypeField ////////////////////////////////////////////////////////////////////////
+
+		case 'addTypeField':
+			$label = valider("label");
+			$data["id"] = addTypeField($label);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getClub':
+			$id = delTypeField("id");
+			$data["id"] = delTypeField($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getTypesField':
+			$data["id"] = getTypesField();
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getTypeField':
+			$id = valider("id");
+			$data["id"] = getTypeField($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getTypeFieldByRun':
+			$id = valider("id");
+			$data["id"] = getTypeFieldByRun($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
 			$data["action"] = "default";
