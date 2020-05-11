@@ -389,6 +389,43 @@ session_start();
 			$data["feedback"] = "ok";
 		break;
 
+		// ParticipateRun ////////////////////////////////////////////////////////////////////////
+
+		case 'delParticipateRun' :
+			$id = valider('id');
+			$data = delParticipateRun($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		
+		case 'addParticipateRun' :
+			$date = valider('date');
+			$time = valider('time');
+			$rank = valider('rank');
+			$user = valider('user');
+			$run = valider('run');
+			$data = addParticipateRun($date,$time,$rank,$user,$run);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		
+		case 'getParticipatesRunByRun' :
+			$id = valider('id');
+			$data = getParticipatesRunByRun($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		
+		case 'getParticipatesRunByUser' :
+			$id = valider('id');
+			$data = getParticipatesRunByUser($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
 			$data["action"] = "default";
