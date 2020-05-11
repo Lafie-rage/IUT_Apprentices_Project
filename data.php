@@ -470,7 +470,63 @@ session_start();
             $data["id"] = getTypeRunByRun($id);
             $data["status"] = true;
             $data["feedback"] = "ok";
+		break;
+		
+		// RegisterRun ////////////////////////////////////////////////////////////////////////
+
+		case 'addRegister_Run':
+            $data["id"] = addRegister_Run(NOW());
+            $data["status"] = true;
+            $data["feedback"] = "ok";
         break;
+
+		case 'getRegisterRun_by_user':
+					$id = valider("id");
+					$data["id"] = getRegisterRun_by_user($id);
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
+
+		case 'getRegisterRun_by_run':
+					$id = valider("id");
+					$data["id"] = getRegisterRun_by_run($id);
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
+
+		case 'getRegistersRun':
+					$data["id"] = getRegistersRun();
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
+
+		case 'delRegisterRun_by_user':
+					$id = valider("id");
+					$data["id"] = delRegisterRun_by_user($id);
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
+
+		case 'delRegisterRun_by_run':
+					$id = valider("id");
+					$data["id"] = delRegisterRun_by_run($id);
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
+
+		case 'getRegisterRunByRun':
+					$id = valider("id");
+					$data["id"] = getRegisterRunByRun($id);
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
+
+		case 'getRegisterRunByUser':
+					$id = valider("id");
+					$data["id"] = getRegisterRunByUser($id);
+					$data["status"] = true;
+					$data["feedback"] = "ok";
+				break;
 
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
