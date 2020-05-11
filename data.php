@@ -426,6 +426,52 @@ session_start();
 			$data["feedback"] = "ok";
 		break;
 
+		// TypeRun ////////////////////////////////////////////////////////////////////////
+
+		case 'addTypeRun':
+            $label_type_run = valider("label_type_run");
+            $distance_type_run = valider("distance_type_run");
+            $data["id"] = addTypeRun($label_type_run, $distance_type_run);
+            $data["status"] = true;
+            $data["feedback"] = "ok";
+        break;
+
+		case 'getTypeRun':
+            $id_type_run = valider("id_type_run");
+            $data["id"] = getTypeRun($id_type_run);
+            $data["status"] = true;
+            $data["feedback"] = "ok";
+        break;
+
+		case 'getTypesRun':
+            $data["id"] = getTypesRun();
+            $data["status"] = true;
+            $data["feedback"] = "ok";
+        break;
+
+		case 'delTypeRun':
+            $id_type_run = valider("id_type_run");
+            $data["id"] = delTypeRun($id_type_run);
+            $data["status"] = true;
+            $data["feedback"] = "ok";
+        break;
+
+		case 'updateTypeRun':
+            $id_type_run = valider("id_type_run");
+        	$label_type_run = valider("label_type_run");
+            $distance_type_run = valider("distance_type_run");
+            $data["id"] = updateTypeRun($id_type_run, $label_type_run, $distance_type_run);
+            $data["status"] = true;
+            $data["feedback"] = "ok";
+        break;
+
+		case 'getTypeRunByRun':
+            $id = valider("id");
+            $data["id"] = getTypeRunByRun($id);
+            $data["status"] = true;
+            $data["feedback"] = "ok";
+        break;
+
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
 			$data["action"] = "default";
