@@ -296,6 +296,63 @@ session_start();
 			$data["feedback"] = "ok";
 		break;
 
+		// Clubs ////////////////////////////////////////////////////////////////////////
+
+		case 'addclub':
+			$labelClub = valider("labelClub");
+			$avatar = valider("avatar");
+			$name = valider("name");
+			$phone = valider("phone");
+			$address = valider("address");
+			$mail = valider("mail");
+			$data["id"] = addclub($label_club,$avatar,$name,$phone,$address,$mail);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getClub':
+			$id = valider("id");
+			$data["id"] = getClub($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'nameExist':
+			$label_club = valider("label_club");
+			$data["id"] = nameExist($label_club);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'getClubByUser':
+			$id = valider("id");
+			$data["id"] = getClubByUser($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		
+		case 'getClubByUser':
+			$id = valider("id");
+			$data["id"] = getClubByUser($id);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		break;
+		
+		case 'updateClub':
+			$id_club = valider("id_club");
+			$nameClub = valider("nameClub");
+			$avatar = valider("avatar");
+			$name = valider("name");
+			$phone = valider("phone");
+			$address = valider("address");
+			$mail = valider("mail");
+			$data["id"] = updateClub($nameClub, $avatar, $name, $phone, $address, $mail, $id_club);
+			$data["status"] = true;
+			$data["feedback"] = "ok";
+		
+		break;
+
 		// Defaut ////////////////////////////////////////////////////////////////////////
 		default :
 			$data["action"] = "default";
