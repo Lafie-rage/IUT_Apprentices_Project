@@ -5,7 +5,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="row d-flex mx-auto w-100 justify-content-between">
       <div class="col-auto">
-        <a class="navbar-brand" href="#"><img src="ressources/icon_logo_site.png" width="200" height="150" alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="ressources/icon_logo_site.png" width="200" height="150" alt=""></a>
       </div>
       <div class="col-auto col-slogan">
         <span class="navbar-text display-4 mx-auto slogan">Sortez de votre can-app !</span>
@@ -26,16 +26,16 @@
       <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item mr-3">
-            <a class="nav-link" href="#"><i class="fas fa-running"></i>&nbsp;Courses</a>
+            <a class="nav-link" href="run.php"><i class="fas fa-running"></i>&nbsp;Courses</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#"><i class="fas fa-poll"></i>&nbsp;résultat</a>
+            <a class="nav-link" href="result.php"><i class="fas fa-poll"></i>&nbsp;résultat</a>
           </li>
           <li class="nav-item mx-3">
-            <a class="nav-link" href="#"><i class="fas fa-dollar-sign"></i>&nbsp;Dépense</a>
+            <a class="nav-link" href="cost.php"><i class="fas fa-dollar-sign"></i>&nbsp;Dépense</a>
           </li>
           <li class="nav-item ml-3">
-            <a class="nav-link" href="#"><i class="fas fa-home"></i>&nbsp;A propos</a>
+            <a class="nav-link" href="apropos.php"><i class="fas fa-home"></i>&nbsp;A propos</a>
           </li>
         </ul>
       </div>
