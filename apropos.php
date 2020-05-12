@@ -1,5 +1,7 @@
 <style media="screen">
-
+  /* CSS Body/Html */
+  @font-face {font-family: "Blac"; src: url('Blacklisted.ttf');}
+  @font-face {font-family: "The Blacklist"; src: url('The Blacklist.ttf');}
   /* header's style */
   /* CSS NavBar */
   .navbar {background:url(ressources/header_nav_herbe.png), url(ressources/header_nav_ciel.jpg); position:absolute; background-position:bottom; background-size:40%, cover; background-repeat:repeat-x; left:0;right:0;top:0; margin-bottom: 2%;}

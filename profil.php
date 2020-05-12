@@ -1,109 +1,109 @@
 <style>
-/* CSS Body/Html */
-@font-face {font-family: "The Blacklist";src: url('The Blacklist.ttf');}
-body,html{margin:0}
-body{background-image:url(ressources/body-background.jpg);background-size:cover;background-repeat:no-repeat;background-attachments:fixed;overflow-x:hidden}
+  /* CSS Body/Html *//* CSS Body/Html */
+  @font-face {font-family: "Blac"; src: url('Blacklisted.ttf');}
+  @font-face {font-family: "The Blacklist"; src: url('The Blacklist.ttf');}
+  body,html{margin:0}
+  body{background-image:url(ressources/body-background.jpg);background-size:cover;background-repeat:no-repeat;background-attachments:fixed;overflow-x:hidden}
 
-/* header's style */
-/* CSS NavBar */
-.navbar {background:url(ressources/header_nav_herbe.png), url(ressources/header_nav_ciel.jpg); position:absolute; background-position:bottom; background-size:40%, cover; background-repeat:repeat-x; left:0;right:0;top:0; margin-bottom: 2%;}
-.slogan {color: #0275b4 !important; font-family: "The Blacklist" !important;}
-#navbarNav {background-color: #c5bfbf; line-height: 2vw; width:40%; position: absolute; bottom: 0; right: 30%;}
-#header-img-profil {position: relative; left: 90;}
-.navbar.navbar-dark .navbar-toggler {color: #0275b4 !important; }
-.nav-link {color: #0275b4 !important; text-transform: uppercase; font-weight: 700;}
-.nav-link:hover {color: #F8F9FA;}
-.fas {color: #ffffff;}
+  /* header's style */
+  /* CSS NavBar */
+  .navbar {background:url(ressources/header_nav_herbe.png), url(ressources/header_nav_ciel.jpg); position:absolute; background-position:bottom; background-size:40%, cover; background-repeat:repeat-x; left:0;right:0;top:0; margin-bottom: 2%;}
+  .slogan {color: #0275b4 !important; font-family: "The Blacklist" !important;}
+  #navbarNav {background-color: #c5bfbf; line-height: 2vw; width:40%; position: absolute; bottom: 0; right: 30%;}
+  #header-img-profil {position: relative; left: 90;}
+  .navbar.navbar-dark .navbar-toggler {color: #0275b4 !important; }
+  .nav-link {color: #0275b4 !important; text-transform: uppercase; font-weight: 700;}
+  .nav-link:hover {color: #F8F9FA;}
+  .fas {color: #ffffff;}
 
-/* Reponsive for laptot */
-@media (min-width: 1025px) and (max-width: 1280px) {
+  /* Reponsive for laptot */
+  @media (min-width: 1025px) and (max-width: 1280px) {
 
-  /* Responsive NavBar */
-  .col-slogan {display: inline-block;}
-  .slogan {position: relative; left: 0rem; top: 2rem; font-size: 2.3rem !important;}
-  .navbar {padding: 0 !important; }
-  #navbarNav {position: absolute !important; right: 18%; width: 60%;}
-  .col-header-profil {display: block; position: relative; bottom: 0rem; left: 0rem;}
-}
+    /* Responsive NavBar */
+    .col-slogan {display: inline-block;}
+    .slogan {position: relative; left: 0rem; top: 2rem; font-size: 2.3rem !important;}
+    .navbar {padding: 0 !important; }
+    #navbarNav {position: absolute !important; right: 18%; width: 60%;}
+    .col-header-profil {display: block; position: relative; bottom: 0rem; left: 0rem;}
+  }
 
-/* Responsive for tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
+  /* Responsive for tablet */
+  @media (min-width: 768px) and (max-width: 1024px) {
 
-  /* Responsive NavBar */
-  .col-slogan {display: inline-block;}
-  .slogan {position: relative; left: 13rem; top: 9rem;}
-  .navbar {padding: 0 !important; }
-  #navbarNav {position: initial;}
-  .col-header-profil {display: block; position: relative; bottom: 0rem; left: 0rem;}
+    /* Responsive NavBar */
+    .col-slogan {display: inline-block;}
+    .slogan {position: relative; left: 13rem; top: 9rem;}
+    .navbar {padding: 0 !important; }
+    #navbarNav {position: initial;}
+    .col-header-profil {display: block; position: relative; bottom: 0rem; left: 0rem;}
 
-}
+  }
 
-/* Responsive for tablet landscape */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Responsive for tablet landscape */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
-  /* Responsive NavBar */
-  .col-slogan {display: inline-block;}
-  .slogan {position: relative; left: 0rem; top: 2rem; font-size: 2.3rem !important;}
-  .navbar {padding: 0 !important; }
-  #navbarNav {position: absolute !important; right: 18%; width: 60%;}
-  .col-header-profil {display: block; position: relative; bottom: 0rem; left: 0rem;}
+    /* Responsive NavBar */
+    .col-slogan {display: inline-block;}
+    .slogan {position: relative; left: 0rem; top: 2rem; font-size: 2.3rem !important;}
+    .navbar {padding: 0 !important; }
+    #navbarNav {position: absolute !important; right: 18%; width: 60%;}
+    .col-header-profil {display: block; position: relative; bottom: 0rem; left: 0rem;}
 
-}
+  }
 
-/* Responsive for mobile */
-@media (min-width: 330px) and (max-width: 768px) {
+  /* Responsive for mobile */
+  @media (min-width: 330px) and (max-width: 768px) {
 
-  /* Responsive NavBar */
-  .navbar {padding: 0 !important;}
-  .col-slogan {display: none;}
-  #navbarNav {position: relative; right: 0%; width: 100%;}
-  .navbarNav .nav-item {margin: 0rem !important;}
-  .col-header-profil {display: block; position: relative !important; right: 7rem; top: 2rem;}
-  .col-header-profil .row-sign {display: none;}
+    /* Responsive NavBar */
+    .navbar {padding: 0 !important;}
+    .col-slogan {display: none;}
+    #navbarNav {position: relative; right: 0%; width: 100%;}
+    .navbarNav .nav-item {margin: 0rem !important;}
+    .col-header-profil {display: block; position: relative !important; right: 7rem; top: 2rem;}
+    .col-header-profil .row-sign {display: none;}
 
-  .mx-3, .ml-3 {margin-left: 0rem !important}
+    .mx-3, .ml-3 {margin-left: 0rem !important}
 
-}
+  }
 
-/* CSS Connexion profil */
-.profil-connexion {position: relative; bottom: 30%; right: 5%; z-index: 1;}
-.lien-sign {position: relative; bottom: 0%; right: 12.5%; text-transform: uppercase; font-family: Blacklisted; text-decoration: none; color: #0275b4; z-index: 1;}
+  /* CSS Connexion profil */
+  .profil-connexion {position: relative; bottom: 30%; right: 5%; z-index: 1;}
+  .lien-sign {position: relative; bottom: 0%; right: 12.5%; text-transform: uppercase; font-family: Blacklisted; text-decoration: none; color: #0275b4; z-index: 1;}
 
-/* CSS Profil */
-.profil{background-color:#c5bfbf;box-shadow:5px 5px 5px #5e6472;border-radius:5px}
-.row-profil-bottom, .row-profil-middle, .row-profil-top{height:auto}
-.row-profil-top .date {padding-left: .5rem;}
-.row-profil-top span{font-size:1vw;vertical-align:middle}
-.col-profil-modifier{left:60%}
-.row-profil-middle{margin-top:2%;margin-bottom:2%}
-.col-img-profil{bottom:10%}
-.img-profil{width:70%;min-width:30%;height:250px;min-height:120px;overflow:hidden}
-.col-profil-description{max-width:60%!important}
+  /* CSS Profil */
+  .profil{background-color:#c5bfbf;box-shadow:5px 5px 5px #5e6472;border-radius:5px}
+  .row-profil-bottom, .row-profil-middle, .row-profil-top{height:auto}
+  .row-profil-top .date {padding-left: .5rem;}
+  .row-profil-top span{font-size:1vw;vertical-align:middle}
+  .col-profil-modifier{left:60%}
+  .row-profil-middle{margin-top:2%;margin-bottom:2%}
+  .col-img-profil{bottom:10%}
+  .img-profil{width:70%;min-width:30%;height:250px;min-height:120px;overflow:hidden}
+  .col-profil-description{max-width:60%!important}
 
-/* CSS Achievement */
-.achievement{height:auto;background-color:#c5bfbf;box-shadow:5px 5px 5px #5e6472;border-radius:5px}
-.img-achievement{width:60%;height:250px;overflow:hidden}
-.info-achievement {color: #0275b4;}
+  /* CSS Achievement */
+  .achievement{height:auto;background-color:#c5bfbf;box-shadow:5px 5px 5px #5e6472;border-radius:5px}
+  .img-achievement{width:60%;height:250px;overflow:hidden}
+  .info-achievement {color: #0275b4;}
 
-/* CSS Commentaires */
-.row-commentaire {background-color:#c5bfbf;box-shadow:5px 5px 5px #5e6472;border-radius:5px}
+  /* CSS Commentaires */
+  .row-commentaire {background-color:#c5bfbf;box-shadow:5px 5px 5px #5e6472;border-radius:5px}
 
-/* Responsive for mobile */
-@media (min-width: 330px) and (max-width: 768px) {
+  /* Responsive for mobile */
+  @media (min-width: 330px) and (max-width: 768px) {
 
-  /* Responsive Profil */
-  .profil {margin-bottom: 1rem;;}
-  .card-img-64 {width: 34px !important; height: 34px !important;}
-  .img-profil {width: auto; height: 80px;}
-  .row-profil-top .name {font-size: 6vw;}
-  .row-profil-top .name span {font-size: 3vw;}
-  .row-profil-top .date {font-size: 4vw; padding-left: .2rem;}
-  #profil-information {font-size: 1rem !important;}
+    /* Responsive Profil */
+    .profil {margin-bottom: 1rem;;}
+    .card-img-64 {width: 34px !important; height: 34px !important;}
+    .img-profil {width: auto; height: 80px;}
+    .row-profil-top .name {font-size: 6vw;}
+    .row-profil-top .name span {font-size: 3vw;}
+    .row-profil-top .date {font-size: 4vw; padding-left: .2rem;}
+    #profil-information {font-size: 1rem !important;}
 
-  /* Responsive achievement*/
-  .img-achievement {width: 40%; height: 120px;}
-}
-
+    /* Responsive achievement*/
+    .img-achievement {width: 40%; height: 120px;}
+  }
 </style>
 
 <!DOCTYPE html>

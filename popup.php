@@ -1,4 +1,5 @@
 <style media="screen">
+
   .wrap {
     position: fixed;
     background-color: rgba(87, 86, 86, 0.5);

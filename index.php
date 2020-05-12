@@ -1,6 +1,7 @@
 <style>
   /* CSS Body/Html */
   @font-face {font-family: "Blac"; src: url('Blacklisted.ttf');}
+  @font-face {font-family: "The Blacklist"; src: url('The Blacklist.ttf');}
   body,html{margin:0}
   body{background-image:url(ressources/arriereplan.png);background-size:cover;background-repeat:no-repeat;background-attachments:fixed;overflow-x:hidden}
   /* CSS Body/Html */
